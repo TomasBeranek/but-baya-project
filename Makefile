@@ -10,3 +10,6 @@ NOTEBOOK=BAYa_Assignment2022.ipynb
 
 html:
 	jupyter nbconvert --to html $(NOTEBOOK)
+
+pdf:
+	jupyter nbconvert --to pdf $(NOTEBOOK)
