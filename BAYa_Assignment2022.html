@@ -15174,22 +15174,19 @@ and $\beta_{0v}$ are the elements of the prior $\boldsymbol{\beta}_0$
 </ol>
 <ul>
 <li><span style="color:red">
- Gibbs sampling should produce samples from the posterior distribution $P(\boldsymbol{Z}, \boldsymbol{\Theta}, \boldsymbol{\Phi}|\boldsymbol{W})$. So, why are we looking at $\ln P(\boldsymbol{W}, \boldsymbol{Z}, \boldsymbol{\Theta}, \boldsymbol{\Phi})$? Why and how does this quantity tell us that the Gibbs sampling is doing the right thing?
+ Gibbs sampling should produce samples from the posterior distribution $P(\boldsymbol{Z}, \boldsymbol{\Theta}, \boldsymbol{\Phi}|\boldsymbol{W})$. So, why are we looking at $\ln P(\boldsymbol{W}, \boldsymbol{Z}, \boldsymbol{\Theta}, \boldsymbol{\Phi})$? Why and how does this quantity tell us that the Gibbs sampling is doing the right thing?</span>
+<blockquote>
+<p><span style="color:green"><em><strong>ANSWER:</strong></em></span> Because $ P(\boldsymbol{Z},\boldsymbol{\Theta},\boldsymbol{\Phi}|\boldsymbol{W}) = \frac{1}{P(\boldsymbol{W})} P(\boldsymbol{W},\boldsymbol{Z},\boldsymbol{\Theta},\boldsymbol{\Phi}) \propto P(\boldsymbol{W},\boldsymbol{Z},\boldsymbol{\Theta},\boldsymbol{\Phi})$ since we know $\boldsymbol{W}$. And to know that Gibbs sampling works, we just need to know that the sample probabilities are increasing (we don't care about the specific values). Also, $P(\boldsymbol{W},\boldsymbol{Z},\boldsymbol{\Theta},\boldsymbol{\Phi})$ can be easily calculated from the samples, unlike $P(\boldsymbol{Z},\boldsymbol{\Theta},\boldsymbol{\Phi}|\boldsymbol{W})$. And $\ln$ is there for practical reasons - to reasonably see the differences in the graph, and also because of the limitations imposed by finite memory in the computer. If we didn't do it in the $\ln$ domain, some numbers would be so small compared to others that they would round to 0, and so all the products would be 0 as well.</p>
+</blockquote>
 </li>
-</ul>
-</span>
-<pre><code>&gt; Because $ P(\boldsymbol{Z},\boldsymbol{\Theta},\boldsymbol{\Phi}|\boldsymbol{W}) = \frac{1}{P(\boldsymbol{W})} P(\boldsymbol{W},\boldsymbol{Z},\boldsymbol{\Theta},\boldsymbol{\Phi}) \propto P(\boldsymbol{W},\boldsymbol{Z},\boldsymbol{\Theta},\boldsymbol{\Phi})$ since we know $\boldsymbol{W}$. And to know that Gibbs sampling works, we just need to know that the sample probabilities are increasing (we don't care about the specific values). Also, $P(\boldsymbol{W},\boldsymbol{Z},\boldsymbol{\Theta},\boldsymbol{\Phi})$ can be easily calculated from the samples, unlike $P(\boldsymbol{Z},\boldsymbol{\Theta},\boldsymbol{\Phi}|\boldsymbol{W})$. And $\ln$ is there for practical reasons - to reasonably see the differences in the graph, and also because of the limitations imposed by finite memory in the computer. If we didn't do it in the $\ln$ domain, some numbers would be so small compared to others that they would round to 0, and so all the products would be 0 as well.
-
-</code></pre>
-<ul>
 <li><p>How can we say from this plot that the burn-in phase is over?</p>
 <blockquote>
-<p>The burn-in phase is over when $\ln P(\boldsymbol{W}, \boldsymbol{Z}, \boldsymbol{\Theta}, \boldsymbol{\Phi})$ stops growing and starts moving sideways on approximately the same values (since it is a logarithmic scale, the differences in the values of $P(\boldsymbol{W}, \boldsymbol{Z}, \boldsymbol{\Theta}, \boldsymbol{\Phi})$ are still huge).</p>
+<p><span style="color:green"><em><strong>ANSWER:</strong></em></span> The burn-in phase is over when $\ln P(\boldsymbol{W}, \boldsymbol{Z}, \boldsymbol{\Theta}, \boldsymbol{\Phi})$ stops growing and starts moving sideways on approximately the same values (since it is a logarithmic scale, the differences in the values of $P(\boldsymbol{W}, \boldsymbol{Z}, \boldsymbol{\Theta}, \boldsymbol{\Phi})$ are still huge).</p>
 </blockquote>
 </li>
 <li><p>How does $\ln P(\boldsymbol{W}, \boldsymbol{Z}, \boldsymbol{\Theta}, \boldsymbol{\Phi})$ behave before and after the burn-in phase and <strong>why</strong>?</p>
 <blockquote>
-<p>The value of $\ln P(\boldsymbol{W}, \boldsymbol{Z}, \boldsymbol{\Theta}, \boldsymbol{\Phi})$ grows during the burn-in phase as very rare samples are generated first (because they were randomly chosen) and progressively more common samples are generated as they approach higher values of a given probability distribution. After the burn-in phase, the samples have a much higher $\ln P(\boldsymbol{W}, \boldsymbol{Z}, \boldsymbol{\Theta}, \boldsymbol{\Phi})$ because they are in a region where the given probability distribution has higher values.</p>
+<p><span style="color:green"><em><strong>ANSWER:</strong></em></span> The value of $\ln P(\boldsymbol{W}, \boldsymbol{Z}, \boldsymbol{\Theta}, \boldsymbol{\Phi})$ grows during the burn-in phase as very rare samples are generated first (because they were randomly chosen) and progressively more common samples are generated as they approach higher values of a given probability distribution. After the burn-in phase, the samples have a much higher $\ln P(\boldsymbol{W}, \boldsymbol{Z}, \boldsymbol{\Theta}, \boldsymbol{\Phi})$ because they are in a region where the given probability distribution has higher values.</p>
 </blockquote>
 </li>
 </ul>
