@@ -16033,7 +16033,7 @@ class="
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Run VB in test mode</span>
 <span class="n">alpha</span> <span class="o">=</span> <span class="n">variational_bayes</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">alpha0</span><span class="p">,</span> <span class="n">beta</span><span class="p">,</span> <span class="n">beta0</span><span class="p">,</span> <span class="n">M_test</span><span class="p">,</span> <span class="n">K</span><span class="p">,</span> <span class="n">V</span><span class="p">,</span> <span class="n">D_test</span><span class="p">,</span> <span class="n">learning</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 
-<span class="c1"># Get Theta from alpha</span>
+<span class="c1"># Get most likely sample of Theta from alpha</span>
 <span class="n">theta_vb_test</span> <span class="o">=</span> <span class="n">alpha</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">expand_dims</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">alpha</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
 <span class="c1"># Plot test document representations to simplex</span>
