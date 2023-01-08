@@ -6,7 +6,7 @@
 #  Up2date sources: https://github.com/TomasBeranek/but-baya-project
 # ***************************************************************************
 
-NOTEBOOK=BAYa_Assignment2022.ipynb
+NOTEBOOK=xberan46_BAYa_Assignment2022.ipynb
 
 html:
 	jupyter nbconvert --to html $(NOTEBOOK)
